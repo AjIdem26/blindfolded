@@ -1,0 +1,66 @@
+$spacing-variable: 50px;
+.login-wrapper {
+  border: 1px solid var(--main-primary-color);
+  max-width: 25em;
+  margin: auto;
+  border-radius: 3em;
+  > * {
+    padding-bottom: $spacing-variable;
+  }
+  margin-top: $spacing-variable;
+  .login-title {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 575;
+    font-size: 2.5em;
+    padding-top: $spacing-variable;
+  }
+  .login-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 0.35em;
+    .login-form-input-wrapper {
+      width: 80%;
+    }
+    .login-form-btn {
+      background: linear-gradient(to right, var(--main-primary-color) , var(--main-primary-complementary-color));
+      border: 1px solid var(--main-primary-color);
+      color: var(--main-white-color);
+      border-radius: 15px;
+      width: 80%;
+      padding: 0.5em;
+      margin-top: $spacing-variable/2;
+    }
+    .login-label {
+      display: flex;
+      align-items: center;
+      gap: 0.1em;
+    }
+  }
+  .login-sing-up-icon-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+    .login-sing-up-icon-logos-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.35em;
+      .login-sing-up-icon {
+        font-size: 2em;
+      }
+    }
+  }
+  .login-sign-up-alternative-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+    padding-top: $spacing-variable;
+  }
+}

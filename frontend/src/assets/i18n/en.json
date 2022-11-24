@@ -1,0 +1,15 @@
+{
+  "login": {
+    "button": "Login",
+    "username": "Username",
+    "password": "Password",
+    "username_placeholder": "Type your username",
+    "password_placeholder": "Type your password",
+    "forgot_password": "Forgot password?",
+    "or_sign_up": "Or Sign Up Using",
+    "or_log_in": "Or Log In Using",
+    "sign_up": "Sign up",
+    "pass_rq": "Password is <b>required</b>",
+    "user_rq": "Username is <b>required</b>"
+  }
+}
