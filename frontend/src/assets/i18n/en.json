@@ -10,6 +10,8 @@
     "or_log_in": "Or Log In Using",
     "sign_up": "Sign up",
     "pass_rq": "Password is <b>required</b>",
-    "user_rq": "Username is <b>required</b>"
+    "user_rq": "Username is <b>required</b>",
+    "success": "Successfully logged in",
+    "err": "Login failed"
   }
 }

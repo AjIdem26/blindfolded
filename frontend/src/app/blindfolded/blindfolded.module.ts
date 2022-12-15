@@ -8,6 +8,7 @@ import {APP_BASE_HREF} from '@angular/common';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { TranslateModule, TranslateLoader, TranslateService } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { RegisterModule } from '../register/register.module';
 @NgModule({
   declarations: [
     BlindfoldedComponent
@@ -17,6 +18,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
     AppRoutingModule,
     BlindfoldedRoutingModule,
     LoginModule,
+    RegisterModule,
     HttpClientModule,
         TranslateModule.forRoot({
             loader: {
