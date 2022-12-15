@@ -3,7 +3,7 @@
   <form class="login-form" [formGroup]="loginForm">
     <mat-form-field [hideRequiredMarker]="true" class="login-form-input-wrapper">
       <mat-label class="login-label">
-        <mat-icon>person</mat-icon> {{'login.username' | translate}}
+        <mat-icon>person</mat-icon> <span class="login-label-wrapper">{{'login.username' | translate}}</span>
       </mat-label>
       <input type="text" matInput formControlName="username"
              [placeholder]="'login.username_placeholder' | translate">
@@ -13,24 +13,25 @@
     </mat-form-field>
     <mat-form-field [hideRequiredMarker]="true" class="login-form-input-wrapper">
       <mat-label class="login-label">
-        <mat-icon>lock</mat-icon> {{'login.password' | translate}}
+        <mat-icon>lock</mat-icon> <span class="login-label-wrapper">{{'login.password' | translate}}</span>
       </mat-label>
       <input type="password" matInput formControlName="password"
              [placeholder]="'login.password_placeholder' | translate">
       <mat-error *ngIf="loginForm.controls['password'].hasError('required')">
         <span [innerHTML]="'login.pass_rq' | translate"></span>
       </mat-error>
-      <mat-hint [align]="'end'">{{'login.forgot_password' | translate}}</mat-hint>
     </mat-form-field>
+    <span class="login-label-wrapper login-link">{{'login.forgot_password' | translate}}</span>
     <button (click)="onLogin()" class="login-form-btn"> {{'login.button' | translate}} </button>
   </form>
   <div class="login-sing-up-icon-wrapper">
     <div>{{'login.or_log_in' | translate}}</div>
     <div class="login-sing-up-icon-logos-wrapper">
-      <fa-icon class="login-sing-up-icon" *ngFor="let icon of loginIcons" [icon]="icon"></fa-icon>
+      <fa-icon class="login-sing-up-icon login-link" *ngFor="let icon of loginIcons" [icon]="icon"></fa-icon>
     </div>
   </div>
   <div class="login-sign-up-alternative-wrapper">
     <div>{{('login.sign_up' | translate).toUpperCase()}}</div>
   </div>
 </div>
+<notifier-container></notifier-container>

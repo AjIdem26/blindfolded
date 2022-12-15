@@ -1,8 +1,13 @@
 @import '~bootstrap/scss/bootstrap';
 @import '~@angular/material/prebuilt-themes/indigo-pink.css';
-@import '../src/assets/variables/main-variables.scss';
-html, body { height: 100%; }
+@import './assets/variables/main-variables.scss';
+@import '~angular-notifier/styles/core.css';
+@import '~angular-notifier/styles/themes/theme-material.css';
+@import '~angular-notifier/styles/types/type-default.css';
+@import '~angular-notifier/styles/types/type-error.css';
+@import '~angular-notifier/styles/types/type-success.css';
 body {
+  height: 100%;
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }

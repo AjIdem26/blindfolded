@@ -4,6 +4,8 @@ import { FormControl } from "@angular/forms";
 export interface UserInterface {
   username: string;
   password: string;
+  token?: string;
+  isAdmin?: string;
 }
 /** Interface for user login form. */
 export interface UserLoginFormInterface {

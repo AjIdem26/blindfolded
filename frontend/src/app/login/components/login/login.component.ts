@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { faFacebook, faGoogle, faTwitter, IconDefinition } from '@fortawesome/free-brands-svg-icons';
+import { TranslateService } from '@ngx-translate/core';
+import { NotifierService } from 'angular-notifier';
 import { UserLoginFormInterface } from '../../interface/user.interface';
+import { LoginService } from '../../services/login.service';
 
 
 @Component({
@@ -14,7 +18,11 @@ export class LoginComponent implements OnInit {
   public loginIcons: IconDefinition[] = [faFacebook, faGoogle, faTwitter];
   /** Login form for the component. */
   public loginForm!: FormGroup;
-  constructor() {
+  constructor(
+    private loginService: LoginService,
+    private notifierService: NotifierService,
+    private translateService: TranslateService,
+    private router: Router) {
    }
 
   ngOnInit(): void {
@@ -29,6 +37,15 @@ export class LoginComponent implements OnInit {
   }
   /** Saves the configuration, and attempts to make login VIA REST. */
   public onLogin() {
-    console.log(this.loginForm.getRawValue());
+    this.loginService.login(this.loginForm.getRawValue()).subscribe({
+      next: () => {
+        this.notifierService.notify('success', this.translateService.instant('login.success'));
+        // TODO change this to real page
+        this.router.navigate(['']);
+      }, error: () => {
+        this.setDefaultLoginForm();
+        this.notifierService.notify('error', this.translateService.instant('login.err'));
+      }
+    })
   }
 }
